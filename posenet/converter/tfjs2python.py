@@ -1,6 +1,8 @@
 import json
 import struct
 import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from tensorflow.python.tools.freeze_graph import freeze_graph
 import cv2
 import numpy as np
@@ -162,7 +164,8 @@ def convert(model_id, model_dir, check=False):
         layers = to_output_strided_layers(mobile_net_arch, output_stride)
         variables = load_variables(chkpoint)
 
-        init = tf.global_variables_initializer()
+
+        init = tf.compat.v1.global_variables_initializer()
         with tf.Session() as sess:
             sess.run(init)
             saver = tf.train.Saver()

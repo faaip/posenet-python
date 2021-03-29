@@ -2,6 +2,10 @@ import tensorflow as tf
 import os
 import posenet.converter.config
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+
 MODEL_DIR = './_models'
 DEBUG_OUTPUT = False
 
