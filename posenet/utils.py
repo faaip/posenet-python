@@ -23,6 +23,7 @@ def _process_input(source_img, scale_factor=1.0, output_stride=16):
 
 
 def read_cap(cap, scale_factor=1.0, output_stride=16):
+    cap = cv2.VideoCapture(0)
     res, img = cap.read()
     if not res:
         raise IOError("webcam failure")

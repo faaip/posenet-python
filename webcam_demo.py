@@ -25,8 +25,6 @@ def main():
             cap = cv2.VideoCapture(args.file)
         else:
             cap = cv2.VideoCapture(args.cam_id)
-        cap.set(3, args.cam_width)
-        cap.set(4, args.cam_height)
 
         start = time.time()
         frame_count = 0
